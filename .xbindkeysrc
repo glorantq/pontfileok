@@ -51,17 +51,17 @@
     XF86AudioMute 
 
 #Print screen
-"(maim | xclip -selection clipboard -t image/png) && notify-send "Screenshot captured" "Copied the image to the clipboard.""
+"(maim && notify-send "Screenshot captured" "Copied screenshot to the clipboard") | xclip -selection clipboard -t image/png"
     m:0x0 + c:107
     Print 
 
 #Snipping tool
-"(maim -s | xclip -selection clipboard -t image/png) && notify-send "Screenshot captured" "Copied the image to the clipboard""
+"(maim -s && notify-send "Screenshot captured" "Copied screenshot of the area to the clipboard") | xclip -selection clipboard -t image/png"
     m:0x41 + c:39
     Shift+Mod4 + s 
 
 #Print screen (window)
-"(maim -i `xdotool getactivewindow` | xclip -selection clipboard -t image/png) && notify-send "Screenshot captured" "Copied screenshot of \"$(xdotool getactivewindow getwindowname)\" the clipboard""
+"(maim -i `xdotool getactivewindow` && notify-send "Screenshot captured" "Copied screenshot of \"$(xdotool getactivewindow getwindowname)\" the clipboard") | xclip -selection clipboard -t image/png"
     m:0x1 + c:107
     Shift + Print 
 
